@@ -24,11 +24,19 @@ loom {
 	// customMinecraftManifest.set("https://meta.legacyfabric.net/v2/manifest/${minecraft_version}")
 
 	// Required by 1.7.x
-	// runs {
-	// 	client {
-	// 		programArgs "--userProperties", "{}"
-	// 	}
-	// }
+	 runs {
+	 	client {
+	 		programArgs "--userProperties", "{}"
+
+			vmArgs(
+                "-Xms256m",
+                "-Xmx3G",
+                "-XX:+UseZGC",
+                "-XX:+ZGenerational",
+                "-XX:ZUncommitDelay=30"
+            )
+	 	}
+	 }
 }
 
 legacyLooming {
@@ -52,7 +60,7 @@ dependencies {
 	// If you know for a fact you don't, it's not required and can be safely removed.
 	// As of September 2025, available only for intermediary generation 1.
 	// Check availability for your MC version at https://legacyfabric.net/usage.html
-	modImplementation "net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${project.fabric_version}"
+	// modImplementation "net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${project.fabric_version}"
 	// If you use LFAPI with MC 1.3.2, 1.4.7 or 1.5.2, uncomment the next line
 	// implementation('com.google.code.gson:gson:2.8.9')
 

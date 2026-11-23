@@ -1,14 +1,14 @@
+
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.legacyfabric.example.mixin",
+  "package": "com.memorymanager.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-    "ExampleMixin"
+    "BigTreeMemoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   }
 }
+
